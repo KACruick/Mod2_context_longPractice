@@ -1,21 +1,21 @@
 function changeContext(func, obj) {
-  let name = func.bind(obj)
-  return name;
+  let result = func.bind(obj)
+  return result();
 }
 
 //-----------------------------
-class Person {
-  constructor(name) {
-    this.name = name;
-  }
-}
+// class Person {
+//   constructor(name) {
+//     this.name = name;
+//   }
+// }
 
-function extractName() {
-  return this.name;
-}
+// function extractName() {
+//   return this.name;
+// }
 
-const kristen = new Person('Kristen');
-console.log(changeContext(extractName, kristen)); // => Kristen
+// const kristen = new Person('Kristen');
+// console.log(changeContext(extractName, kristen)); // => Kristen
 
 
 /*****************************************************************************/
